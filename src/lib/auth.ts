@@ -5,20 +5,20 @@
 import { AuthSession, AuthUser } from "@/types";
 
 // Hardcoded mock user for local development / evaluation
+// Matches seeded data from seed-data.js (John Doe - OWNER)
 const MOCK_USER: AuthUser = {
-  id: "usr_01HQ3XJMR5E1234567890",
-  email: "admin@teamhub.dev",
-  name: "Alex Morgan",
+  id: "user_01HQ3XK123",
+  email: "john@acme.com",
+  name: "John Doe",
   organizationId: "org_01HQ3XJMR5E0987654321",
-  role: "ADMIN",
+  role: "OWNER",
 };
 
-// Hardcoded JWT token — this is a real-format HS256 JWT signed with
+// Hardcoded JWT token — this is a real HS256 JWT signed with
 // the dev secret from AppConfig. Decodes to the MOCK_USER claims.
+// Generated with: node generate-token.js
 const MOCK_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
-  "eyJ1c2VySWQiOiJ1c3JfMDFIUTNYSk1SNUUxMjM0NTY3ODkwIiwiZW1haWwiOiJhZG1pbkB0ZWFtaHViLmRldiIsIm9yZ2FuaXphdGlvbklkIjoib3JnXzAxSFEzWEpNUjVFMDk4NzY1NDMyMSIsInJvbGUiOiJBRE1JTiIsImlzcyI6InRlYW1odWItYXBpIiwiZXhwIjo5OTk5OTk5OTk5fQ." +
-  "placeholder_signature";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzAxSFEzWEsxMjMiLCJpc3MiOiJ0ZWFtaHViLWFwaSIsImVtYWlsIjoiam9obkBhY21lLmNvbSIsIm9yZ2FuaXphdGlvbklkIjoib3JnXzAxSFEzWEpNUjVFMDk4NzY1NDMyMSIsImlhdCI6MTc3MDg0NzM1NywiZXhwIjoxODAyMzgzMzU3fQ.FLMY-6yfeAyr_1T0bEioMfFCPDQt9zUNzN-FOO7X93U";
 
 const MOCK_SESSION: AuthSession = {
   user: MOCK_USER,

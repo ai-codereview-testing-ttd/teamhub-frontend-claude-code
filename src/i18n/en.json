@@ -1,0 +1,59 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No results found",
+    "confirm": "Confirm",
+    "back": "Back"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "members": "Members",
+    "settings": "Settings",
+    "organizations": "Organizations",
+    "billing": "Billing"
+  },
+  "projects": {
+    "title": "Projects",
+    "create": "New Project",
+    "name": "Project Name",
+    "description": "Description",
+    "status": "Status",
+    "members": "Members",
+    "created": "Created",
+    "archive": "Archive Project",
+    "unarchive": "Unarchive Project"
+  },
+  "tasks": {
+    "title": "Tasks",
+    "create": "New Task",
+    "status": "Status",
+    "priority": "Priority",
+    "assignee": "Assignee",
+    "dueDate": "Due Date",
+    "tags": "Tags"
+  },
+  "members": {
+    "title": "Members",
+    "invite": "Invite Member",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "joined": "Joined",
+    "updateRole": "Update Role",
+    "remove": "Remove Member"
+  },
+  "settings": {
+    "title": "Settings",
+    "orgName": "Organization Name",
+    "visibility": "Default Project Visibility",
+    "guestAccess": "Allow guest access to public projects"
+  }
+}

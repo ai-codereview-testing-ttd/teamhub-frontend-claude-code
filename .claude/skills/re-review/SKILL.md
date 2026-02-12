@@ -4,7 +4,7 @@ description: Verify that code review issues from /review-changes have been fixed
 ---
 
 Verify that issues flagged by `/review-changes` have been addressed. This is a
-lightweight follow-up review (2 agents vs 7) that checks specific known issues
+lightweight follow-up review (2 agents vs 6) that checks specific known issues
 rather than scanning from scratch.
 
 ## Pre-flight Check
@@ -53,7 +53,7 @@ Then fetch the review:
 
 ```bash
 gh api "repos/$REPO/pulls/$PR_NUMBER/reviews" \
-  --jq '[.[] | select(.body | contains("Review conducted by") and contains("/review-changes"))] | last'
+  --jq '[.[] | select(.body | (contains("6-agent review system") or contains("Review conducted by")) and contains("/review-changes"))] | last'
 ```
 
 This returns the most recent review that contains the `/review-changes`
@@ -72,13 +72,13 @@ Parse the review comment body to extract each issue. The `/review-changes`
 format is:
 
 ```
-### {Severity} Priority
+### {Severity}
 
-**{Category}** in `{file}:{lines}`
+**{title}** `{file}:{lines}`
 
 {description}
 
-**Recommendation:** {recommendation}
+**Suggestion:** {suggestion}
 ```
 
 For each issue, extract into this structure:
@@ -87,12 +87,12 @@ For each issue, extract into this structure:
 {
   "issues": [
     {
+      "title": "Short descriptive title",
       "file": "path/to/file.ts",
       "lines": "45-50",
       "description": "Description of the issue",
-      "category": "bug|CLAUDE.md compliance|plan compliance|sloppy comment",
       "severity": "critical|high|medium|low",
-      "recommendation": "Suggested fix"
+      "suggestion": "Suggested fix"
     }
   ]
 }
